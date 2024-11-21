@@ -1,0 +1,589 @@
+﻿@model List<WebsiteRaoVat.Models.DanhMuc>
+@{
+    ViewBag.Title = "Trang chủ";
+}
+<style>
+    .slick-slide {
+        height: auto
+    }
+
+    .slick-next {
+        position: absolute;
+        top: 150px;
+        right: 0;
+        border: none;
+    }
+
+    .slick-prev {
+        left: 1px;
+        position: absolute;
+        top: 150px;
+        z-index: 10;
+        border: none;
+    }
+</style>
+<section class="py-3" style="margin-top:10%">
+    <div class="container">
+        <div class="your-class">
+
+
+            <!-- Wrapper for slides -->
+
+            <div><img src="~/Images/1.jpg" width="100%" height="500" /></div>
+            <div><img src="~/Images/2.jpg" width="100%" height="500" /></div>
+            <div><img src="~/Images/3.jpg" width="100%" height="500" /></div>
+            <div><img src="~/Images/5.jpg" width="100%" height="500" /></div>
+            <div><img src="~/Images/6.jpg" width="100%" height="500" /></div>
+            <div><img src="~/Images/7.jpg" width="100%" height="500" /></div>
+
+
+
+        </div>
+    </div>
+</section>
+<section class="py-0">
+    <div class="container">
+        <div class="row" style="background-color:#fff; margin:1px">
+            <div class="row" style="margin:1rem 2rem">
+                <h5 style="font-weight:700">Danh mục nổi bật</h5>
+            </div>
+
+
+            <div class="row">
+                @foreach (var item in Model)
+                {
+                    <div class="col-1 text-center" style="padding:0px; margin:1rem 2rem">
+                        <a href="/TinDang/DSTinDang/@item.MaDanhMuc">
+                            <img src="@item.Hinh" class="img-dm" height="70" width="70" />
+                            <p>@item.TenDanhMuc</p>
+                        </a>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</section>
+</section>
+@*=================================================================GIOEID================================================================*@
+
+
+<section>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            color: #333;
+        }
+
+        header {
+            background-color: #ffffff;
+            color: white;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .content {
+            padding: 20px;
+        }
+
+        h1 {
+            font-size: 2rem;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        .section {
+            margin-top: 30px;
+        }
+
+            .section h2 {
+                font-size: 1.5rem;
+                color: #000000;
+            }
+
+        .feature-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+            .feature-list li {
+                margin-bottom: 10px;
+                font-size: 1.1rem;
+            }
+
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #0d4b6e;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: background-color 0.3s ease;
+        }
+
+            .cta-button:hover {
+                background-color: #053a52;
+            }
+    </style>
+    </head>
+    <body>
+
+        <header>
+            <strong><h1>Chào Mừng Đến Với Trang Web Tư Vấn Phong Thủy Cá Koi</h1></strong>
+            <p>Khám Phá Những Giống Cá Koi Phù Hợp Với Bản Mệnh Của Bạn</p>
+        </header>
+
+        <div class="content">
+            <section class="section">
+                <h2>Giới Thiệu Dịch Vụ</h2>
+                <p>Trang web của chúng tôi cung cấp dịch vụ tư vấn phong thủy giúp bạn chọn lựa cá Koi và thiết kế hồ cá phù hợp với bản mệnh của bạn. Chúng tôi áp dụng các nguyên lý phong thủy dựa trên ngũ hành (Kim, Mộc, Thủy, Hỏa, Thổ) để giúp bạn tạo ra một không gian hài hòa và đem lại vận khí tốt.</p>
+            </section>
+
+            <section class="section">
+                <h2>Chức Năng Chính</h2>
+                <ul class="feature-list">
+                    <li>Tư vấn lựa chọn cá Koi phù hợp với ngũ hành của bạn (Kim, Mộc, Thủy, Hỏa, Thổ).</li>
+                    <li>Đề xuất số lượng cá Koi và loại giống cá thích hợp với bản mệnh.</li>
+                    <li>Tư vấn thiết kế hồ cá (hình dáng, vị trí đặt, hướng đặt, ...).</li>
+                    <li>Tra cứu điểm đánh giá độ phù hợp giữa bản mệnh và các yếu tố phong thủy (cá Koi, hồ cá).</li>
+                    <li>Hệ thống tính toán bản mệnh của người dùng dựa trên năm sinh và giới tính.</li>
+                    <li>Quản lý thông tin các giống cá Koi và đặc điểm hồ cá phù hợp với từng bản mệnh.</li>
+                    <li>Cung cấp chức năng đăng tin quảng cáo cá Koi và sản phẩm phong thủy cho hồ cá.</li>
+                </ul>
+            </section>
+
+
+</section>
+
+
+
+@*=================================================================TÍNH BAN MỆNH================================================================*@
+<section id="section_3">
+    <div style="background-color: #ffffff; padding: 30px; max-width: 400px; margin: 50px auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif;">
+        <h2 style="color: #333; font-size: 22px; text-align: center; margin-bottom: 20px;"><strong>Tính Toán Bản Mệnh</strong></h2>
+
+        <label for="name" style="display: block; margin-bottom: 8px; font-weight: bold;">Họ và tên:</label>
+        <input type="text" id="name" placeholder="Nhập họ tên của bạn" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+
+        <label for="birthYear" style="display: block; margin-bottom: 8px; font-weight: bold;">Năm sinh:</label>
+        <input type="number" id="birthYear" placeholder="Nhập năm sinh của bạn" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+
+        <button onclick="calculateDestiny()" style="width: 100%; padding: 12px; background-color: #333; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease;">
+            Tính Bản Mệnh
+        </button>
+
+        <div class="result" id="result" style="margin-top: 20px; font-weight: bold; text-align: center; color: #333; font-size: 18px;"></div>
+
+        <div class="koiInfo" id="koiInfo" style="margin-top: 20px; font-weight: bold; text-align: justify; color: #333; font-size: 16px;"></div>
+    </div>
+
+    <script>
+        function calculateDestiny() {
+            const name = document.getElementById("name").value.trim();
+            const birthYear = parseInt(document.getElementById("birthYear").value);
+            const resultDiv = document.getElementById("result");
+            const koiInfoDiv = document.getElementById("koiInfo");
+
+            // Kiểm tra năm sinh hợp lệ
+            if (!birthYear || isNaN(birthYear) || birthYear < 1900 || birthYear > new Date().getFullYear()) {
+                resultDiv.innerHTML = "Vui lòng nhập năm sinh hợp lệ.";
+                koiInfoDiv.innerHTML = '';
+                return;
+            }
+
+            // Danh sách các năm và mệnh
+            const mệnhKim = [1954, 1955, 1962, 1963, 1984, 1985, 1992, 1993, 2000, 1970, 1971];
+            const mệnhHoả = [1956, 1957, 1964, 1965, 1978, 1979, 1986, 1987, 1994, 1995, 2008, 2009];
+            const mệnhThuỷ = [1952, 1953, 1966, 1967, 1974, 1975, 1982, 1983, 1996, 1997, 2004, 2005];
+            const mệnhMộc = [1950, 1951, 1958, 1959, 1972, 1973, 1980, 1981, 1988, 1989, 2002, 2003];
+            const mệnhThổ = [1960, 1961, 1968, 1969, 1990, 1991, 1998, 1999, 2006, 2007];
+
+            // Xác định mệnh từ năm sinh
+            let element = '';
+            let koi = '';
+            let pond = '';
+            let pondSize = '';
+            let pondShape = '';
+            let pondDecoration = '';
+
+            if (mệnhKim.includes(birthYear)) {
+                element = 'Kim';
+                koi = "Cá Koi giống Platinum, Gin Rin hoặc Hi Utsuri.";
+                pond = "Nước sạch, ánh sáng vừa phải, không quá nóng.";
+                pondSize = "2 - 3m².";
+                pondShape = "Chữ nhật hoặc tròn.";
+                pondDecoration = "Đá tự nhiên, cây thủy sinh xanh.";
+            } else if (mệnhHoả.includes(birthYear)) {
+                element = 'Hoả';
+                koi = "Cá Koi giống Kohaku, Sanke hoặc Showa.";
+                pond = "Nước ấm, nhiều ánh sáng, cây thủy sinh tạo bóng mát.";
+                pondSize = "2 - 3m².";
+                pondShape = "Tròn hoặc đa giác.";
+                pondDecoration = "Cây cảnh cao, đèn chiếu sáng.";
+            } else if (mệnhThuỷ.includes(birthYear)) {
+                element = 'Thuỷ';
+                koi = "Cá Koi giống Shiro Utsuri, Asagi hoặc Kikusui.";
+                pond = "Nước mát, bóng mát từ cây cối.";
+                pondSize = "2m².";
+                pondShape = "Oval hoặc tự do.";
+                pondDecoration = "Cây thủy sinh dài, đá nhỏ, sỏi.";
+            } else if (mệnhMộc.includes(birthYear)) {
+                element = 'Mộc';
+                koi = "Cá Koi giống Kiwa, Aka Matsuba.";
+                pond = "Nhiều cây thủy sinh, nước sạch, lưu thông tốt.";
+                pondSize = "2m² trở lên.";
+                pondShape = "Chữ nhật hoặc oval.";
+                pondDecoration = "Cây thủy sinh tươi tốt, thác nước nhỏ.";
+            } else if (mệnhThổ.includes(birthYear)) {
+                element = 'Thổ';
+                koi = "Cá Koi giống Tancho, Utsurimono.";
+                pond = "Đáy hồ sạch, pH ổn định, ít tảo.";
+                pondSize = "2 - 3m².";
+                pondShape = "Vuông hoặc chữ nhật.";
+                pondDecoration = "Đá tự nhiên, cây thủy sinh nhẹ nhàng.";
+            } else {
+                element = 'Không xác định';
+                koi = '';
+                pond = '';
+                pondSize = '';
+                pondShape = '';
+                pondDecoration = '';
+            }
+
+            resultDiv.innerHTML = `Bạn ${name || 'chưa nhập tên'} sinh năm ${birthYear} có mệnh là: <span style="color: #333;">${element}</span>`;
+            koiInfoDiv.innerHTML = `
+                        <p><strong>Giống cá Koi phù hợp:</strong> ${koi}</p>
+                        <p><strong>Đặc điểm hồ cá phù hợp:</strong> ${pond}</p>
+                        <p><strong>Kích thước hồ:</strong> ${pondSize}</p>
+                        <p><strong>Hình dạng hồ:</strong> ${pondShape}</p>
+                        <p><strong>Trang trí hồ:</strong> ${pondDecoration}</p>
+                    `;
+        }
+
+        const button = document.querySelector("button");
+        button.addEventListener("mouseover", function () {
+            this.style.backgroundColor = "#555";
+        });
+
+        button.addEventListener("mouseout", function () {
+            this.style.backgroundColor = "#333";
+        });
+    </script>
+</section>
+@*======================================================================================================*@
+
+<section id="compatibilityCheck">
+    <div style="background-color: #ffffff; padding: 30px; max-width: 500px; margin: 50px auto; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); font-family: Arial, sans-serif;">
+        <h2 style="color: #333; font-size: 22px; text-align: center; margin-bottom: 20px;">Kiểm tra độ tương thích</h2>
+
+        <!-- Lựa chọn chức năng -->
+        <label for="featureSelect" style="display: block; margin-bottom: 10px; font-weight: bold;">Chọn chức năng:</label>
+        <select id="featureSelect" onchange="toggleFeature()" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+            <option value="">-- Chọn --</option>
+            <option value="pond">Xem độ tương thích hồ cá</option>
+            <option value="fish">Xem độ tương thích cá Koi</option>
+        </select>
+
+        <!-- Form tương thích hồ cá -->
+        <div id="pondCompatibilityForm" style="display: none;">
+            <label for="elementSelection" style="display: block; margin-bottom: 8px; font-weight: bold;">Chọn mệnh:</label>
+            <select id="elementSelection" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+                <option value="">-- Chọn mệnh --</option>
+                <option value="Kim">Kim</option>
+                <option value="Mộc">Mộc</option>
+                <option value="Thủy">Thủy</option>
+                <option value="Hỏa">Hỏa</option>
+                <option value="Thổ">Thổ</option>
+            </select>
+
+            <label for="directionSelection" style="display: block; margin-bottom: 8px; font-weight: bold;">Hướng đặt:</label>
+            <select id="directionSelection" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+                <option value="">-- Chọn hướng --</option>
+                <option value="Đông">Đông</option>
+                <option value="Tây">Tây</option>
+                <option value="Nam">Nam</option>
+                <option value="Bắc">Bắc</option>
+            </select>
+
+            <label for="shapeSelection" style="display: block; margin-bottom: 8px; font-weight: bold;">Hình dáng:</label>
+            <select id="shapeSelection" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+                <option value="">-- Chọn hình dáng --</option>
+                <option value="Chữ nhật">Chữ nhật</option>
+                <option value="Tròn">Tròn</option>
+                <option value="Vuông">Vuông</option>
+                <option value="Bầu dục">Bầu dục</option>
+                <option value="Hình tự do">Hình tự do</option>
+            </select>
+
+            <label for="positionSelection" style="display: block; margin-bottom: 8px; font-weight: bold;">Vị trí đặt:</label>
+            <select id="positionSelection" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+                <option value="">-- Chọn vị trí --</option>
+                <option value="Phòng khách">Phòng khách</option>
+                <option value="Sảnh vào">Sảnh vào</option>
+                <option value="Phòng ngủ">Phòng ngủ</option>
+                <option value="Phòng làm việc">Phòng làm việc</option>
+                <option value="Nhà bếp">Nhà bếp</option>
+            </select>
+
+            <button onclick="checkPondCompatibility()" style="width: 100%; padding: 12px; background-color: #333; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease;">
+                Xem độ tương thích
+            </button>
+        </div>
+
+        <!-- Form tương thích cá Koi -->
+        <div id="koiCompatibilityForm" style="display: none;">
+            <label for="koiElementSelection" style="display: block; margin-bottom: 8px; font-weight: bold;">Chọn mệnh:</label>
+            <select id="koiElementSelection" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+                <option value="">-- Chọn mệnh --</option>
+                <option value="Kim">Kim</option>
+                <option value="Mộc">Mộc</option>
+                <option value="Thủy">Thủy</option>
+                <option value="Hỏa">Hỏa</option>
+                <option value="Thổ">Thổ</option>
+            </select>
+
+            <label for="koiCountSelection" style="display: block; margin-bottom: 8px; font-weight: bold;">Số lượng cá:</label>
+            <input type="number" id="koiCountSelection" placeholder="Nhập số lượng cá" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+
+            <label for="koiColorSelection" style="display: block; margin-bottom: 8px; font-weight: bold;">Màu sắc chủ đạo:</label>
+            <select id="koiColorSelection" style="width: 100%; padding: 10px; margin-bottom: 15px; border-radius: 5px; border: 1px solid #ccc; font-size: 16px;">
+                <option value="">-- Chọn màu sắc --</option>
+                <option value="Trắng">Trắng</option>
+                <option value="Đỏ">Đỏ</option>
+                <option value="Vàng">Vàng</option>
+                <option value="Đen">Đen</option>
+                <option value="Khác">Khác</option>
+            </select>
+
+            <button onclick="checkFishCompatibility()" style="width: 100%; padding: 12px; background-color: #333; color: #fff; border: none; border-radius: 5px; cursor: pointer; font-size: 16px; transition: background-color 0.3s ease;">
+                Xem độ tương thích
+            </button>
+        </div>
+
+        <!-- Kết quả -->
+        <div id="compatibilityResult" style="margin-top: 20px; font-weight: bold; text-align: center; color: #333; font-size: 18px;"></div>
+    </div>
+
+    <script>
+        const resultCache = {};
+
+        function toggleFeature() {
+            const featureType = document.getElementById("featureSelect").value;
+            document.getElementById("pondCompatibilityForm").style.display = featureType === "pond" ? "block" : "none";
+            document.getElementById("koiCompatibilityForm").style.display = featureType === "fish" ? "block" : "none";
+            document.getElementById("compatibilityResult").innerHTML = '';
+        }
+
+        function getRandomScore(key) {
+            if (!resultCache[key]) {
+                resultCache[key] = Math.floor(Math.random() * 21) + 80; // Random từ 80% đến 100%
+            }
+            return resultCache[key];
+        }
+
+        function checkPondCompatibility() {
+            const element = document.getElementById("elementSelection").value;
+            const direction = document.getElementById("directionSelection").value;
+            const shape = document.getElementById("shapeSelection").value;
+            const position = document.getElementById("positionSelection").value;
+
+            if (!element || !direction || !shape || !position) {
+                document.getElementById("compatibilityResult").innerHTML = "Vui lòng điền đầy đủ thông tin.";
+                return;
+            }
+
+            const key = `pond-${element}-${direction}-${shape}-${position}`;
+            const compatibility = getRandomScore(key);
+
+            document.getElementById("compatibilityResult").innerHTML = `Độ tương thích của hồ cá với mệnh của bạn là: ${compatibility}%<br>Xem các sản phẩm hồ cá được bán ở đây để tìm hồ cá phù hợp nhất cho mình nhé!`;
+        }
+
+        function checkFishCompatibility() {
+            const element = document.getElementById("koiElementSelection").value;
+            const count = document.getElementById("koiCountSelection").value;
+            const color = document.getElementById("koiColorSelection").value;
+
+            if (!element || !count || !color) {
+                document.getElementById("compatibilityResult").innerHTML = "Vui lòng điền đầy đủ thông tin.";
+                return;
+            }
+
+            const key = `fish-${element}-${count}-${color}`;
+            const compatibility = getRandomScore(key);
+
+            document.getElementById("compatibilityResult").innerHTML = `Độ tương thích của cá Koi với mệnh của bạn là: ${compatibility}%<br>Xem các sản phẩm hồ cá được bán ở đây để tìm hồ cá phù hợp nhất cho mình nhé!`;
+        }
+    </script>
+</section>
+
+
+
+
+@*<section class="py-3">
+        <div class="container">
+            <div class="container" style="background-color:#fff; padding:1rem">
+                <h5 style="font-weight:700; margin:0rem 1.5rem">Tin nổi bật</h5>
+                <div class="row" style="margin:0.5rem" id="frmTin">
+
+
+                </div>
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination" id="phanTrang">
+                    </ul>
+                </nav>
+            </div>
+
+        </div>
+    </section>*@
+<section class="py-3">
+    <div class="container">
+        <div class="container" style="background-color:#fff; padding:1rem; ">
+            <h5 style="font-weight:700; margin:0rem 1.5rem">Tin đăng mới</h5>
+            <div class="row" style="margin:0.5rem" id="frmSanPham">
+
+
+            </div>
+            <nav aria-label="Page navigation example">
+                <ul class="pagination" id="phanTrang">
+                </ul>
+            </nav>
+        </div>
+
+    </div>
+</section>
+
+<script>
+
+    var Trang = 1;
+
+    $('#phanTrang').on('click', 'li', function (e) {
+        e.preventDefault();
+        Trang = $(this).text();
+        LoadDSSP(Trang);
+
+    });
+
+    $(document).ready(function () {
+        $.ajax({
+            type: 'get',
+            url: '/Home/gettinnoibat',
+            data: {
+                trang: Trang,
+            },
+            success: function (data) {
+                $('#frmTin').empty();
+                $.each(data.lstTinnoibat, function (k, v) {
+                    var t = `<div class="col-lg-2 col-sm-5 pn-product" style="padding:0px; padding:1rem" name="frmSP" id="` + v.MaBaiDang + `">
+                <div class="product-item">
+                    <div class="pi-pic">
+                        <img src="`+ v.HinhAnh + `" />
+                        <div class="icon">
+                            <i class="icon_heart_alt" style="color:red"></i>
+                        </div>
+                    </div>
+                    <div class="pi-text">
+                        <a href="#">
+                            <h5>`+ v.TieuDe + `</h5>
+                        </a>
+                        <div class="product-price">
+                            `+ v.Gia + ` đ
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>`;
+                    $('#frmTin').append(t);
+                });
+                if (data.trangSP > 1) {
+                    for (i = 1; i <= data.trangSP; i++) {
+                        let li = '<li class="page-item"><a class="page-link" href="#">' + i + '</a></li>';
+                        $('#phanTrang').append(li);
+                    }
+
+                }
+            }
+        });
+        $(document).on('click', "div[name = 'frmTin']", function () {
+            //alert($(this).attr('id'));
+            window.location = '/Home/BaiDang/' + $(this).attr('id');
+
+        });
+    });
+
+
+
+
+
+
+
+    //getDanhSachSP
+    $(document).ready(function () {
+        $.ajax({
+            type: 'get',
+            url: '/Home/getDanhSachSP',
+            data: {
+                trang: Trang,
+            },
+            success: function (data) {
+                $('#frmSanPham').empty();
+                $.each(data.lstBaiDang, function (k, v) {
+                    var t = `<div class="col-lg-2 col-sm-5 pn-product" style="padding:0px; padding:1rem" name="frmSP" id="` + v.MaBaiDang + `">
+                <div class="product-item">
+                    <div class="pi-pic">
+                        <img src="`+ v.HinhAnh + `" />
+                        <div class="icon">
+                            <i class="icon_heart_alt" style="color:red"></i>
+                        </div>
+                    </div>
+                    <div class="pi-text">
+                        <a href="#">
+                            <h5>`+ v.TieuDe + `</h5>
+                        </a>
+                        <div class="product-price" style="color:red;">
+                            `+ v.Gia + ` đ
+                        </div>
+                        <div class="product-price" style="color:#808080; font-size:10px; text-align: right; padding-bottom:1px; ">
+                            `+ v.NgayDang + `
+                        </div>
+                    </div>
+
+                </div>
+            </div>`;
+                    $('#frmSanPham').append(t);
+                });
+                if (data.trangSP > 1) {
+                    for (i = 1; i <= data.trangSP; i++) {
+                        let li = '<li class="page-item"><a class="page-link" href="#">' + i + '</a></li>';
+                        $('#phanTrang').append(li);
+                    }
+
+                }
+            }
+        });
+        $(document).on('click', "div[name = 'frmSP']", function () {
+            //alert($(this).attr('id'));
+            window.location = '/Home/BaiDang/' + $(this).attr('id');
+
+        });
+    });
+
+    $(document).ready(function () {
+        $('.your-class').slick({
+
+            slidesToShow: 1,
+            slidesToScroll: 1,
+            autoplaySpeed: 200,
+            prevArrow: "<button type='button' class='slick-prev pull-left'><i class='fa fa-angle-left' aria-hidden='true'></i></button>",
+            nextArrow: "<button type='button' class='slick-next pull-right'><i class='fa fa-angle-right' aria-hidden='true'></i></button>",
+
+        });
+    })
+</script>

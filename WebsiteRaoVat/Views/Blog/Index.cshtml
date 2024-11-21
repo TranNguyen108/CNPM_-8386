@@ -1,0 +1,256 @@
+﻿@{
+    ViewBag.Title = "Blog";
+}
+
+
+<style>
+    /* CSS chung cho toàn bộ trang */
+    .vung-trang {
+        width: 300px; /* chiều rộng của vùng trắng */
+        height: 200px; /* chiều cao của vùng trắng */
+        background-color: white; /* màu nền trắng */
+        border: 1px solid black; /* viền đen quanh vùng trắng */
+    }
+
+    h3 {
+        font-weight: bold;
+    }
+ 
+    h2 {
+        text-align: center;
+        color: #333;
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .news-item {
+        padding: 20px;
+        border-bottom: 1px solid #ddd;
+        transition: background-color 0.3s;
+    }
+
+        .news-item:last-child {
+            border-bottom: none;
+        }
+
+        .news-item:hover {
+            background-color: #f9f9f9;
+        }
+
+        .news-item h3 {
+            color: #333;
+            font-size: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        .news-item p {
+            color: #555;
+            font-size: 1.1em;
+            line-height: 1.6;
+        }
+
+        .news-item .date {
+            font-size: 0.9em;
+            color: #999;
+            margin-top: 10px;
+        }
+
+    .btn-read-more {
+        background-color: black;
+        color: white;
+        padding: 10px 20px;
+        border: none;
+        
+        font-size: 1.1em;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 10px;
+    }
+
+        .btn-read-more:hover {
+            background-color: #e7ab3c;
+        }
+
+    .footer {
+        text-align: center;
+        background-color: #333;
+        color: white;
+        padding: 15px;
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+    }
+</style>
+</head>
+<body>
+    <div class="vung-trang"></div>
+
+    <!-- Tin tức 1 -->
+    <div class="news-item">
+        <h3>Tin Tức: Những giống cá koi phổ biến nhất</h3>
+        <p>Bài viết này giới thiệu các giống cá koi phổ biến như Kohaku, Sanke, Showa và đặc điểm nổi bật của chúng...</p>
+        <div class="date">Ngày đăng: 01/10/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Tin Tức 1')">Đọc thêm</button>
+    </div>
+
+    <!-- Blog 2 -->
+    <div class="news-item">
+        <h3>Blog: Cách nhận biết cá koi khỏe mạnh</h3>
+        <p>Chọn cá koi khỏe mạnh là bước đầu quan trọng khi nuôi cá. Bài viết chia sẻ cách nhận biết cá khỏe và tránh cá bị bệnh...</p>
+        <div class="date">Ngày đăng: 07/10/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Blog 2')">Đọc thêm</button>
+    </div>
+
+    <!-- Tin tức 3 -->
+    <div class="news-item">
+        <h3>Tin Tức: Hướng dẫn xây dựng hồ cá koi đạt chuẩn</h3>
+        <p>Để cá koi phát triển tốt, hồ nuôi cần đảm bảo các tiêu chuẩn về kích thước, hệ thống lọc nước, và độ sâu thích hợp...</p>
+        <div class="date">Ngày đăng: 15/10/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Tin Tức 3')">Đọc thêm</button>
+    </div>
+
+    <!-- Blog 4 -->
+    <div class="news-item">
+        <h3>Blog: Cách chăm sóc cá koi trong mùa đông</h3>
+        <p>Mùa đông là thời điểm cá koi dễ bị ảnh hưởng bởi nhiệt độ. Bài viết chia sẻ cách giữ ấm và chăm sóc cá đúng cách...</p>
+        <div class="date">Ngày đăng: 21/10/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Blog 4')">Đọc thêm</button>
+    </div>
+
+    <!-- Tin tức 5 -->
+    <div class="news-item">
+        <h3>Tin Tức: Các loại thức ăn tốt nhất cho cá koi</h3>
+        <p>Chọn thức ăn phù hợp giúp cá koi phát triển khỏe mạnh và có màu sắc rực rỡ. Bài viết giới thiệu các loại thức ăn chất lượng...</p>
+        <div class="date">Ngày đăng: 30/10/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Tin Tức 5')">Đọc thêm</button>
+    </div>
+
+    <!-- Blog 6 -->
+    <div class="news-item">
+        <h3>Blog: Xử lý bệnh phổ biến ở cá koi</h3>
+        <p>Để tránh các bệnh thường gặp như nấm, ký sinh trùng, người nuôi cần biết cách phát hiện và xử lý kịp thời...</p>
+        <div class="date">Ngày đăng: 04/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Blog 6')">Đọc thêm</button>
+    </div>
+
+    <!-- Tin tức 7 -->
+    <div class="news-item">
+        <h3>Tin Tức: Ý nghĩa phong thủy của cá koi</h3>
+        <p>Cá koi không chỉ đẹp mà còn mang ý nghĩa phong thủy. Bài viết này sẽ giúp bạn hiểu thêm về ý nghĩa sâu sắc của loài cá này...</p>
+        <div class="date">Ngày đăng: 06/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Tin Tức 7')">Đọc thêm</button>
+    </div>
+
+    <!-- Blog 8 -->
+    <div class="news-item">
+        <h3>Blog: Lưu ý khi thiết kế hồ cá koi trong vườn</h3>
+        <p>Hồ cá koi có thể trở thành điểm nhấn tuyệt vời cho sân vườn. Bài viết này chia sẻ những yếu tố cần lưu ý khi thiết kế...</p>
+        <div class="date">Ngày đăng: 08/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Blog 8')">Đọc thêm</button>
+    </div>
+
+    <!-- Tin tức 9 -->
+    <div class="news-item">
+        <h3>Tin Tức: Những sai lầm phổ biến khi nuôi cá koi</h3>
+        <p>Nhiều người mới nuôi cá koi thường mắc phải sai lầm không đáng có. Bài viết này giúp bạn tránh những lỗi phổ biến...</p>
+        <div class="date">Ngày đăng: 10/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Tin Tức 9')">Đọc thêm</button>
+    </div>
+
+    <!-- Blog 10 -->
+    <div class="news-item">
+        <h3>Blog: Bí quyết để cá koi có màu sắc rực rỡ</h3>
+        <p>Màu sắc của cá koi là yếu tố được nhiều người yêu thích. Bài viết chia sẻ cách duy trì và cải thiện màu sắc cho cá...</p>
+        <div class="date">Ngày đăng: 11/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Blog 10')">Đọc thêm</button>
+    </div>
+
+    <!-- Tin tức 11 -->
+    <div class="news-item">
+        <h3>Tin Tức: Cách chọn cá koi phù hợp với hồ</h3>
+        <p>Bài viết chia sẻ những yếu tố cần cân nhắc khi chọn cá koi để phù hợp với kích thước và thiết kế của hồ...</p>
+        <div class="date">Ngày đăng: 12/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Tin Tức 11')">Đọc thêm</button>
+    </div>
+
+    <!-- Blog 12 -->
+    <div class="news-item">
+        <h3>Blog: Cách bảo trì hệ thống lọc nước hồ cá koi</h3>
+        <p>Hệ thống lọc nước là yếu tố quan trọng để đảm bảo chất lượng nước trong hồ. Bài viết chia sẻ cách bảo trì hệ thống hiệu quả...</p>
+        <div class="date">Ngày đăng: 14/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Blog 12')">Đọc thêm</button>
+    </div>
+
+    <!-- Tin tức 13 -->
+    <div class="news-item">
+        <h3>Tin Tức: Tầm quan trọng của ánh sáng trong hồ cá koi</h3>
+        <p>Ánh sáng đóng vai trò quan trọng trong việc giữ gìn sức khỏe và màu sắc của cá koi. Tìm hiểu thêm trong bài viết...</p>
+        <div class="date">Ngày đăng: 15/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Tin Tức 13')">Đọc thêm</button>
+    </div>
+
+    <!-- Blog 14 -->
+    <div class="news-item">
+        <h3>Blog: Làm thế nào để nhận biết cá koi bị stress?</h3>
+        <p>Cá koi dễ bị stress nếu môi trường sống không ổn định. Bài viết hướng dẫn cách nhận biết và xử lý kịp thời...</p>
+        <div class="date">Ngày đăng: 17/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Blog 14')">Đọc thêm</button>
+    </div>
+
+    <!-- Tin tức 15 -->
+    <div class="news-item">
+        <h3>Tin Tức: Những loại vi khuẩn có lợi cho hồ cá koi</h3>
+        <p>Vi khuẩn có lợi giúp duy trì hệ sinh thái trong hồ cá koi. Bài viết này sẽ chia sẻ cách kích thích sự phát triển của chúng...</p>
+        <div class="date">Ngày đăng: 18/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Tin Tức 15')">Đọc thêm</button>
+    </div>
+
+    <!-- Blog 16 -->
+    <div class="news-item">
+        <h3>Blog: Những lợi ích của việc sử dụng cây thủy sinh trong hồ cá koi</h3>
+        <p>Cây thủy sinh không chỉ đẹp mà còn giúp cải thiện chất lượng nước trong hồ cá koi. Tìm hiểu thêm trong bài viết này...</p>
+        <div class="date">Ngày đăng: 19/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Blog 16')">Đọc thêm</button>
+    </div>
+
+    <!-- Tin tức 17 -->
+    <div class="news-item">
+        <h3>Tin Tức: Các loại cá koi dễ nuôi cho người mới bắt đầu</h3>
+        <p>Đối với người mới nuôi, việc chọn loại cá koi phù hợp là rất quan trọng. Bài viết này sẽ giới thiệu các loại dễ nuôi nhất...</p>
+        <div class="date">Ngày đăng: 20/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Tin Tức 17')">Đọc thêm</button>
+    </div>
+
+    <!-- Blog 18 -->
+    <div class="news-item">
+        <h3>Blog: Chia sẻ kinh nghiệm làm sạch hồ cá koi đúng cách</h3>
+        <p>Làm sạch hồ cá koi định kỳ là cách tốt nhất để đảm bảo sức khỏe của cá. Bài viết này chia sẻ kinh nghiệm chi tiết...</p>
+        <div class="date">Ngày đăng: 21/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Blog 18')">Đọc thêm</button>
+    </div>
+
+    <!-- Tin tức 19 -->
+    <div class="news-item">
+        <h3>Tin Tức: Xu hướng thiết kế hồ cá koi năm 2024</h3>
+        <p>Thiết kế hồ cá koi ngày càng đa dạng với những xu hướng mới. Bài viết này cập nhật những thiết kế đang được ưa chuộng...</p>
+        <div class="date">Ngày đăng: 21/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Tin Tức 19')">Đọc thêm</button>
+    </div>
+
+    <!-- Blog 20 -->
+    <div class="news-item">
+        <h3>Blog: Làm sao để duy trì nhiệt độ hồ cá koi ổn định?</h3>
+        <p>Nhiệt độ là yếu tố quan trọng quyết định sức khỏe của cá koi. Bài viết chia sẻ cách kiểm soát và duy trì nhiệt độ hiệu quả...</p>
+        <div class="date">Ngày đăng: 21/11/2024</div>
+        <button class="btn-read-more" onclick="viewMore('Blog 20')">Đọc thêm</button>
+    </div>
+
+
+    <!-- Footer -->
+
+
+    <script>
+        function viewMore(title) {
+            alert("Bạn đã chọn " + title + ". Đây là nơi bạn có thể xem bài viết chi tiết.");
+        }
+    </script>
